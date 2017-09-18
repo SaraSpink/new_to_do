@@ -1,6 +1,7 @@
 require('rspec')
 require('pg')
 require('task')
+require('spec_helper')
 
 describe(Task) do
   describe("#==") do

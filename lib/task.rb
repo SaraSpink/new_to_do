@@ -15,14 +15,14 @@ class Task
     tasks = []
     returned_tasks.each() do |task|
       description = task.fetch("description")
-      list_id = tast.fetch("list_id").to_i()
+      list_id = task.fetch("list_id").to_i()
       tasks.push(Task.new({:description => description, :list_id => list_id}))
     end
     tasks
   end
 
   def save
-    DB.exec("INSERT INTO tasks (description, list_id) VALUES ('#{@description}', #{@list_id});")
+    DB.exec("INSERT INTO task (description, list_id) VALUES ('#{@description}', #{@list_id});")
   end
 
 
