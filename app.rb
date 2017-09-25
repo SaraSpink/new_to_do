@@ -30,16 +30,18 @@ get("/lists/show") do
 end
 
 get("/list/:id") do
-  @list = List.find(params.fetch("id").to_i())
+  @list_id = List.find(params.fetch("id").to_i())
   @task = Task.all()
   erb(:task_form)
 end
 
 post("/task/new/:id") do
   @list_id = List.find(params.fetch("id").to_i())
+
   @description = params['description']
   @due_date = params['due_date']
   @task = Task.new({:description => @description, :done => false, :list_id => @list_id, :due_date => @due_date,})
   @task.save
-  erb(:task_form)
+  # erb(:task_form)
+  redirect("/list/#{@list_id.id}")
 end

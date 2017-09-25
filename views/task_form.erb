@@ -1,4 +1,4 @@
-<h1><%= @list.name %></h1>
+<h1><%= @list_id.name %></h1>
 <h1> Tasks: <h1>
   <ul>
     <% @task.each do |t| %>
@@ -8,7 +8,7 @@
 
 <h1>Add a task:</h1>
 <div class="form-control">
-<form method="post" action="/task/new/<%= @list.id %>">
+<form method="post" action="/task/new/<%= @list_id.id %>">
   <div>
     <label for="description">Enter task description:</label>
     <input name="description" type="text" id="description">
