@@ -26,9 +26,17 @@ patch("/tasks/:id") do
 end
 
 get("/lists/new") do
+  @lists = List.all()
+  erb(:lists)
+end
+
+post("/lists/new") do
+  @name = pararms["name"]
+  @due_date = params["due_date"]
   list = List.new({:name => name, :id => nil, :due_date => due_date})
   list.save()
-  erb(:add_list)
+  @lists = List.all()
+  erb(:list_success)
 end
 
 # post("/lists") do

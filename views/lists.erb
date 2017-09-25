@@ -1,24 +1,12 @@
 <h1>Your Current Lists</h1>
 
-<% if @list.any?() %>
-  <h3>Here are your lists:</h3>
-
-  <ul>
-    <% @list.each() do |list| %>
-      <li><a href="/lists/<%= list.id() %>"><%= list.name() %></a> </li>
-    <% end %>
-  </ul>
-
-<% else %>
-  <p>There are no lists yet!</p>
-<% end %>
 
 <div class="form-control">
   <form method="post" action="/lists/new">
     <label for="name">Enter List name:</label>
     <input type="text" name="name" id="name">
 
-    <label for="due_date">Enter due date in YYYY/MM/DD format:</label>
+    <label for="due_date">Enter due date in YYYY/MM/DD :</label>
     <input type="text" name="due_date" id="due_date">
 
     <button type="submit">Add!</button>
