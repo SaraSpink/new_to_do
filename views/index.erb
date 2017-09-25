@@ -3,7 +3,7 @@
 <h1> Your current lists: <h1>
   <ul>
     <% @list.each do |l| %>
-    <li><%= l.name %></li>
+    <a href="list/<%= l.id() %>"><li><%= l.name %></li></a>
     <% end %>
   </ul>
 

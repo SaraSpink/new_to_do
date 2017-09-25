@@ -1,0 +1,22 @@
+<h1><%= @list.name %></h1>
+<h1> Tasks: <h1>
+  <ul>
+    <% @task.each do |t| %>
+    <li><%= t.description %><%= t.due_date %></li>
+    <% end %>
+  </ul>
+
+<h1>Add a task:</h1>
+<div class="form-control">
+<form method="post" action="/task/new/<%= @list.id %>">
+  <div>
+    <label for="description">Enter task description:</label>
+    <input name="description" type="text" id="description">
+  </div>
+  <div>
+    <label for="due_date">Enter due date:</label>
+    <input name="due_date" type="text" id="due_date">
+  </div>
+    <button type="submit">Add!</button>
+  </form>
+</div>
