@@ -25,12 +25,12 @@ patch("/tasks/:id") do
   erb(:index)
 end
 
-# get("/lists/new") do
-#   list = List.new({:name => name, :id => nil, :due_date => due_date})
-#   list.save()
-#   erb(:list)
-# end
-#
+get("/lists/new") do
+  list = List.new({:name => name, :id => nil, :due_date => due_date})
+  list.save()
+  erb(:add_list)
+end
+
 # post("/lists") do
 #   name = params.fetch("name")
 #   list = List.new({:name => name, :id => nil, :due_date => due_date})

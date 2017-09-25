@@ -12,3 +12,15 @@
 <% else %>
   <p>There are no lists yet!</p>
 <% end %>
+
+<div class="form-control">
+  <form method="post" action="/lists/new">
+    <label for="name">Enter List name:</label>
+    <input type="text" name="name" id="name">
+
+    <label for="due_date">Enter due date in YYYY/MM/DD format:</label>
+    <input type="text" name="due_date" id="due_date">
+
+    <button type="submit">Add!</button>
+  </form>
+</div>
